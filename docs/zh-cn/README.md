@@ -1,3 +1,11 @@
+<!--
+ * @Author: pikapikapikaori pikapikapi_kaori@icloud.com
+ * @Date: 2023-05-01 14:56:17
+ * @LastEditors: pikapikapikaori pikapikapi_kaori@icloud.com
+ * @LastEditTime: 2023-05-01 15:00:54
+ * @FilePath: /docsify-simple-dark-mode/docs/zh-cn/README.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 # docsify-simple-dark-mode
 
 <p align="center">
@@ -8,7 +16,7 @@
 
 ![badge](https://img.shields.io/github/license/pikapikapikaori/docsify-simple-dark-mode) ![badge](https://img.shields.io/github/last-commit/pikapikapikaori/docsify-simple-dark-mode)
 
-[English](README.md) | 中文
+[English](/) | 中文
 
 这是一款为dcosify增加黑暗模式的插件。
 
@@ -42,10 +50,6 @@ window.$docsify = {
 | 属性          | 类型    | 描述           |
 | ------------- | ------- | -------------- |
 | useSwitchMode | Boolean | 是否使用本插件 |
-
-## Demo
-
-[Github Page](https://pikapikapikaori.github.io/docsify-simple-dark-mode/)
 
 ## Others
 
