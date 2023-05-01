@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css" disabled>
 
 <!-- docsify-simple-dark-mode plugin -->
-<script src="https://cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode/src/switchLightDarkMode.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/src/switchLightDarkMode.js"></script>
 ```
 
 添加以下设置：
