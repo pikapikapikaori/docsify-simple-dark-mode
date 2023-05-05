@@ -35,13 +35,19 @@ Add settings:
 window.$docsify = {
     switchLightDarkMode: {
         useSwitchMode: true,
+        top: 130,
+        right: 26,
+        svgColor: '#7d7b75',
     },
 }
 ```
 
-| Attribute     | Type    | Description                |
-| ------------- | ------- | -------------------------- |
-| useSwitchMode | Boolean | Whether to use this plugin |
+| Attribute     | Type    | Description                                           |
+| ------------- | ------- | ----------------------------------------------------- |
+| useSwitchMode | Boolean | Whether to use this plugin                            |
+| top           | Integer | Top margin of the first icon, unit of measurement: px |
+| right         | Integer | Right margin of the icons, unit of measurement: px    |
+| svgColor      | String  | Color of the icons                                    |
 
 ## Demo
 

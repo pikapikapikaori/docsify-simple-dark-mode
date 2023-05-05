@@ -2,13 +2,16 @@
  * @Author: pikapikapikaori pikapikapi_kaori@icloud.com
  * @Date: 2023-04-30 12:57:52
  * @LastEditors: pikapikapikaori pikapikapi_kaori@icloud.com
- * @LastEditTime: 2023-05-01 14:52:43
+ * @LastEditTime: 2023-05-05 22:29:02
  * @FilePath: /pikapikapi-blog/docs/utils/countWords.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-//default values
+// default values
 var switchLightDarkModeOptions = {
     useSwitchMode: true,
+    top: 130,
+    right: 26,
+    svgColor: '#7d7b75',
 }
 
 // Docsify plugin functions
@@ -17,7 +20,9 @@ function plugin(hook, vm) {
         return
     }
 
-    let currentThemeMode = true
+    let themeModes = ['light', 'dark', 'auto',]
+
+    let currentThemeModeIndex = 2
 
     hook.mounted(function () {
         let lightTheme = Docsify.dom.findAll('[href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"]')[0]
@@ -27,27 +32,108 @@ function plugin(hook, vm) {
 
         switchSpan.id = 'switchLightDarkModeDivBeforeArticle'
         switchSpan.style.position = 'fixed'
-        switchSpan.style.right = '30px'
-        switchSpan.style.top = '130px'
+        switchSpan.style.right = switchLightDarkModeOptions.right.toString() + 'px'
+        switchSpan.style.top = switchLightDarkModeOptions.top.toString() + 'px'
 
-        const lightModeIconHtml = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16"> <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/> </svg>'
-        const darkModeIconHtml = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lightbulb-off-fill" viewBox="0 0 16 16"> <path d="M2 6c0-.572.08-1.125.23-1.65l8.558 8.559A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm10.303 4.181L3.818 1.697a6 6 0 0 1 8.484 8.484zM5 14.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5zM2.354 1.646a.5.5 0 1 0-.708.708l12 12a.5.5 0 0 0 .708-.708l-12-12z"/> </svg>'
-        
-        switchSpan.innerHTML = lightModeIconHtml
-        switchSpan.onclick = function (e) {
-            currentThemeMode = !currentThemeMode
-            switchSpan.innerHTML = currentThemeMode ? lightModeIconHtml : darkModeIconHtml
-            lightTheme.disabled = !currentThemeMode
-            darkTheme.disabled = currentThemeMode
+        const lightModeIconHtml = '<?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="' + switchLightDarkModeOptions.svgColor + '"><path d="M12 18a6 6 0 100-12 6 6 0 000 12zM22 12h1M12 2V1M12 23v-1M20 20l-1-1M20 4l-1 1M4 20l1-1M4 4l1 1M1 12h1" stroke="' + switchLightDarkModeOptions.svgColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+        const darkModeIconHtml = '<?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="' + switchLightDarkModeOptions.svgColor + '"><path d="M3 11.507a9.493 9.493 0 0018 4.219c-8.507 0-12.726-4.22-12.726-12.726A9.494 9.494 0 003 11.507z" stroke="' + switchLightDarkModeOptions.svgColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+        const autoModeIconHtml = '<?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="' + switchLightDarkModeOptions.svgColor + '"><path d="M3 15c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3c2.482 0 4.965-3 4.965-3s2.483 3 4.345 3M3 20c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3c2.482 0 4.965-3 4.965-3s2.483 3 4.345 3M19 10a7 7 0 10-14 0" stroke="' + switchLightDarkModeOptions.svgColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+
+        let setThemeMode = function (currentTheme) {
+            switch (currentTheme) {
+            case 'light':
+                lightTheme.disabled = false
+                darkTheme.disabled = true
+                switchSpan.innerHTML = lightModeIconHtml
+                break
+            case 'dark':
+                lightTheme.disabled = true
+                darkTheme.disabled = false
+                switchSpan.innerHTML = darkModeIconHtml
+                break
+            case 'auto':
+                var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+                lightTheme.disabled = isDarkMode
+                darkTheme.disabled = !isDarkMode
+                switchSpan.innerHTML = autoModeIconHtml
+                break
+            }
         }
 
-        document.body.appendChild (switchSpan)
+        setThemeMode(themeModes[currentThemeModeIndex])
+        let preferredThemeChangeEventListenerFunction = function () {
+            if (currentThemeModeIndex === 2) {
+                setThemeMode(themeModes[currentThemeModeIndex])
+            }
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', preferredThemeChangeEventListenerFunction)
+
+        switchSpan.onclick = function (e) {
+            if (currentThemeModeIndex === 2) {
+                currentThemeModeIndex = 0
+            }
+            else {
+                currentThemeModeIndex ++
+            }
+            setThemeMode(themeModes[currentThemeModeIndex])
+        }
+
+        document.body.appendChild(switchSpan)
+
+        var zoomInSpan = document.createElement('span')
+        zoomInSpan.id = 'zoomInSpan'
+        zoomInSpan.style.position = 'fixed'
+        zoomInSpan.style.right = switchLightDarkModeOptions.right.toString() + 'px'
+        zoomInSpan.style.top = (switchLightDarkModeOptions.top + 35).toString() + 'px'
+        zoomInSpan.innerHTML = '<?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="' + switchLightDarkModeOptions.svgColor + '"><path d="M8 11h3m3 0h-3m0 0V8m0 3v3M17 17l4 4M3 11a8 8 0 1016 0 8 8 0 00-16 0z" stroke="' + switchLightDarkModeOptions.svgColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+
+        var zoomOutSpan = document.createElement('span')
+        zoomOutSpan.id = 'zoomOutSpan'
+        zoomOutSpan.style.position = 'fixed'
+        zoomOutSpan.style.right = switchLightDarkModeOptions.right.toString() + 'px'
+        zoomOutSpan.style.top = (switchLightDarkModeOptions.top + 70).toString() + 'px'
+        zoomOutSpan.innerHTML = '<?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="' + switchLightDarkModeOptions.svgColor + '"><path d="M17 17l4 4M3 11a8 8 0 1016 0 8 8 0 00-16 0zM8 11h6" stroke="' + switchLightDarkModeOptions.svgColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+
+        var zoomDefaultSpan = document.createElement('span')
+        zoomDefaultSpan.id = 'zoomDefaultSpan'
+        zoomDefaultSpan.style.position = 'fixed'
+        zoomDefaultSpan.style.right = switchLightDarkModeOptions.right.toString() + 'px'
+        zoomDefaultSpan.style.top = (switchLightDarkModeOptions.top + 105).toString() + 'px'
+        zoomDefaultSpan.innerHTML = '<?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="' + switchLightDarkModeOptions.svgColor + '"><path d="M12 19a7 7 0 100-14 7 7 0 000 14zM12 19v2M5 12H3M12 5V3M19 12h2" stroke="' + switchLightDarkModeOptions.svgColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+
+        let defaultSize = 1.0
+        let currentSize = defaultSize
+
+        function set(targetSize) {
+            document.body.style.zoom = targetSize
+            document.body.style.cssText += '; -moz-transform: scale(' + targetSize + ');-moz-transform-origin: 0 0; '
+        }
+
+        zoomInSpan.onclick = function () {
+            currentSize = currentSize + 0.1
+            set(currentSize)
+        }
+
+        zoomOutSpan.onclick = function () {
+            currentSize = currentSize - 0.1
+            set(currentSize)
+        }
+
+        zoomDefaultSpan.onclick = function () {
+            currentSize = defaultSize
+            set(currentSize)
+        }
+
+        document.body.appendChild(zoomInSpan)
+        document.body.appendChild(zoomOutSpan)
+        document.body.appendChild(zoomDefaultSpan)
+
     })
 }
 
 // Docsify plugin options
-window.$docsify["switchLightDarkMode"] = Object.assign(
+window.$docsify['switchLightDarkMode'] = Object.assign(
     switchLightDarkModeOptions,
-    window.$docsify["switchLightDarkMode"]
+    window.$docsify['switchLightDarkMode']
 )
 window.$docsify.plugins = [].concat(plugin, window.$docsify.plugins)

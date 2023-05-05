@@ -35,13 +35,19 @@
 window.$docsify = {
     switchLightDarkMode: {
         useSwitchMode: true,
+        top: 130,
+        right: 26,
+        svgColor: '#7d7b75',
     },
 }
 ```
 
-| 属性          | 类型    | 描述           |
-| ------------- | ------- | -------------- |
-| useSwitchMode | Boolean | 是否使用本插件 |
+| 属性          | 类型    | 描述                                 |
+| ------------- | ------- | ------------------------------------ |
+| useSwitchMode | Boolean | 是否使用本插件                       |
+| top           | Integer | 第一个图标与页面顶部的距离，单位：px |
+| right         | Integer | 图标与页面右侧的距离，单位：px       |
+| svgColor      | String  | 图标颜色                             |
 
 ## Demo
 
