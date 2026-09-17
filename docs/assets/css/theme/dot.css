@@ -1,0 +1,40 @@
+:root {
+    --color-bg: #1e2128;
+    --color-text: #c8d0d8;
+    --heading-color: #e0e8f0;
+    --strong-color: #e0e8f0;
+    --blockquote-color: #8a9298;
+    --sidebar-bg: #1e2128;
+    --sidebar-color: #a8b0b8;
+    --sidebar-link-color: #a8b0b8;
+    --sidebar-name-color: #e0e8f0;
+    --sidebar-group-title-color: #e0e8f0;
+    --sidebar-toggle-bg-hover: var(--theme-color);
+    --border-color: #2e323a;
+    --sidebar-border-color: #2e323a;
+    --code-bg: #262a328c;
+    --codeblock-bg: #262a328c;
+    --code-color: #e88a6a;
+    --codeblock-color: #c8d0d8;
+    --table-row-alt-bg: #262a328c;
+    --theme-color: #a2c7ec;
+    --button-bg: var(--theme-color);
+    --button-color: #1e2128;
+    --mark-bg: var(--theme-color);
+    --mark-color: #1e2128;
+    --sidebar-toggle-bg: rgba(30, 33, 40, .85);
+    --dot-color: rgba(180, 200, 220, .12);
+    --dot-size: 22px;
+}
+
+body {
+    background-color: var(--color-bg);
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1.5px);
+    background-size: var(--dot-size) var(--dot-size);
+}
+
+.sidebar {
+    background-color: var(--sidebar-bg);
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1.5px);
+    background-size: var(--dot-size) var(--dot-size);
+}

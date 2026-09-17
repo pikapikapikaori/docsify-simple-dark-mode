@@ -1,0 +1,142 @@
+<!-- For develop, plugin files use relative url instead of cdn. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css" />
+
+    <link id="theme-vue" rel="stylesheet" href="./assets/css/theme/vue.css">
+    <link id="theme-dark" rel="stylesheet" href="./assets/css/theme/dark.css" disabled>
+    <link id="theme-color" rel="stylesheet" href="" disabled>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        window.$docsify = {
+            name: 'docsify-simple-dark-mode',
+            repo: 'https://github.com/pikapikapikaori/docsify-simple-dark-mode',
+
+            copyCode: {
+                buttonText: {
+                    '/zh-cn/': '点击复制',
+                    '/': 'Copy to clipboard'
+                },
+                errorText: {
+                    '/zh-cn/': '错误',
+                    '/': 'Error'
+                },
+                successText: {
+                    '/zh-cn/': '复制成功',
+                    '/': 'Copied'
+                }
+            },
+
+            addWidgets: {
+                useSwitchMode: true,
+                top: 20,
+                right: 26,
+                topOffset: 500,
+                themes: [
+                    {
+                        name: 'default',
+                        light: null,
+                        dark: null,
+                        lightColor: '#ffffff',
+                        darkColor: '#3f3f3f',
+                        lightThemeColor: '#42b883',
+                        darkThemeColor: '#f66'
+                    },
+                    {
+                        name: 'lavender',
+                        light: './assets/css/theme/lavender.css',
+                        dark: './assets/css/theme/lavandula.css',
+                        lightColor: '#f5f0fa',
+                        darkColor: '#1f1830',
+                        lightThemeColor: '#cca2ec',
+                        darkThemeColor: '#cca2ec'
+                    },
+                    {
+                        name: 'kraft',
+                        light: './assets/css/theme/kraft.css',
+                        dark: './assets/css/theme/bronze.css',
+                        lightColor: '#f4ecd8',
+                        darkColor: '#2a1f14',
+                        lightThemeColor: '#ecc7a2',
+                        darkThemeColor: '#ecc7a2'
+                    },
+                    {
+                        name: 'matcha',
+                        light: './assets/css/theme/matcha.css',
+                        dark: './assets/css/theme/library.css',
+                        lightColor: '#e3efd1',
+                        darkColor: '#1e3328',
+                        lightThemeColor: '#c3eca2',
+                        darkThemeColor: '#c3eca2'
+                    },
+                    {
+                        name: 'kirby',
+                        light: './assets/css/theme/kirby.css',
+                        dark: './assets/css/theme/metaknight.css',
+                        lightColor: '#ffeef4',
+                        darkColor: '#1a2238',
+                        lightThemeColor: '#eca2b8',
+                        darkThemeColor: '#7a424e'
+                    },
+                    {
+                        name: 'catppuccin',
+                        light: './assets/css/theme/latte.css',
+                        dark: './assets/css/theme/catppuccin.css',
+                        lightColor: '#eff1f5',
+                        darkColor: '#1e1e2e',
+                        lightThemeColor: '#c3a2ec',
+                        darkThemeColor: '#c3a2ec'
+                    },
+                    {
+                        name: 'gold',
+                        light: './assets/css/theme/whitegold.css',
+                        dark: './assets/css/theme/darkgold.css',
+                        lightColor: '#f5f0e8',
+                        darkColor: '#0a0a0a',
+                        lightThemeColor: '#ecdaa2',
+                        darkThemeColor: '#ecdaa2'
+                    },
+                    {
+                        name: 'calligraphy',
+                        light: './assets/css/theme/calligraphy.css',
+                        dark: './assets/css/theme/grid.css',
+                        lightColor: '#fbfbf5',
+                        darkColor: '#1a2028',
+                        lightThemeColor: '#ecc7a2',
+                        darkThemeColor: '#a2c7ec'
+                    },
+                    {
+                        name: 'typography',
+                        light: './assets/css/theme/typography.css',
+                        dark: './assets/css/theme/dot.css',
+                        lightColor: '#fafaf5',
+                        darkColor: '#1e2128',
+                        lightThemeColor: '#a2c7ec',
+                        darkThemeColor: '#a2c7ec'
+                    }
+                ]
+            },
+        }
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+
+    <!-- Latest v2.x.x -->
+    <script src="https://unpkg.com/docsify-copy-code@2"></script>
+
+    <!-- docsify-simple-dark-mode plugin -->
+    <link rel="stylesheet" href="./assets/css/addWidgets.css" />
+    <script src="./assets/js/addWidgets.js"></script>
+
+</body>
+
+</html>

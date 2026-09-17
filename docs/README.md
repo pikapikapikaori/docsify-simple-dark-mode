@@ -10,49 +10,164 @@
 
 English | [中文](/zh-cn/)
 
-This is a plugin to add dark mode for docsify.
+This is a plugin that adds widgets to docsify. Its main features include:
 
-## After Using This Plugin
+- Dark mode switching, with auto mode support
+- Theme switching, with some built-in themes and support for custom themes
+- Theme color switching
+- Show / hide toggles for the above three widgets
+- Progress bar
+- Back to top
 
-This plugin adds a fixed floating icon to the top-right corner of the whole page, which will be appearing all the time, even when you scroll your screen down. Clicking on this icon will change the theme of your site between [vue.css](https://github.com/docsifyjs/docsify/blob/develop/src/themes/vue.styl) and [dark.css](https://github.com/docsifyjs/docsify/blob/develop/src/themes/dark.styl).
+## Usage
 
-## To Use
-
-In `index.html`, ensure you have following style sheets, and install this plugin:
+In `index.html`, after the following code:
 
 ```html
-<!-- stylesheets -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css" disabled>
-
-<!-- docsify-simple-dark-mode plugin -->
-<script src="https://cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/src/switchLightDarkMode.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css"/>
 ```
 
-Add settings:
+Insert the following code:
+
+```html
+<link id="theme-vue" rel="stylesheet" href="//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/vue.min.css">
+<link id="theme-dark" rel="stylesheet" href="//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/dark.min.css" disabled>
+<link id="theme-color" rel="stylesheet" href="" disabled>
+```
+
+Also, after the following code:
+
+```html
+<script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+```
+
+Insert the following code:
+
+```html
+<!-- docsify-simple-dark-mode plugin -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/addWidgets.min.css"/>
+<script src="//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/js/addWidgets.min.js"></script>
+```
+
+Add the following settings:
 
 ```js
 window.$docsify = {
-    switchLightDarkMode: {
+    addWidgets: {
         useSwitchMode: true,
-        top: 130,
+        top: 20,
         right: 26,
-        svgColor: '#7d7b75',
+        topOffset: 500,
+        themes: [
+            {
+            name: 'default',
+            light: null,
+            dark: null,
+            lightColor: '#ffffff',
+            darkColor: '#3f3f3f',
+            lightThemeColor: '#42b883', 
+            darkThemeColor: '#f66'
+            },
+            {
+            name: 'lavender',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/lavender.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/lavandula.css',
+            lightColor: '#f5f0fa',
+            darkColor: '#1f1830',
+            lightThemeColor: '#cca2ec',
+            darkThemeColor: '#cca2ec'
+            },
+            {
+            name: 'kraft',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/kraft.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/bronze.css',
+            lightColor: '#f4ecd8',
+            darkColor: '#2a1f14',
+            lightThemeColor: '#ecc7a2',
+            darkThemeColor: '#ecc7a2'
+            },
+            {
+            name: 'matcha',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/matcha.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/library.css',
+            lightColor: '#e3efd1',
+            darkColor: '#1e3328',
+            lightThemeColor: '#c3eca2',
+            darkThemeColor: '#c3eca2'
+            },
+            {
+            name: 'kirby',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/kirby.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/metaknight.css',
+            lightColor: '#ffeef4',
+            darkColor: '#1a2238',
+            lightThemeColor: '#eca2b8',
+            darkThemeColor: '#7a424e'
+            },
+            {
+            name: 'catppuccin',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/latte.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/catppuccin.css',
+            lightColor: '#eff1f5',
+            darkColor: '#1e1e2e',
+            lightThemeColor: '#c3a2ec',
+            darkThemeColor: '#c3a2ec'
+            },
+            {
+            name: 'gold',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/whitegold.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/darkgold.css',
+            lightColor: '#f5f0e8',
+            darkColor: '#0a0a0a',
+            lightThemeColor: '#ecdaa2',
+            darkThemeColor: '#ecdaa2'
+            },
+            {
+            name: 'calligraphy',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/calligraphy.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/grid.css',
+            lightColor: '#fbfbf5',
+            darkColor: '#1a2028',
+            lightThemeColor: '#ecc7a2',
+            darkThemeColor: '#a2c7ec'
+            },
+            {
+            name: 'typography',
+            light: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/typography.css',
+            dark: '//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/dot.css',
+            lightColor: '#fafaf5',
+            darkColor: '#1e2128',
+            lightThemeColor: '#a2c7ec',
+            darkThemeColor: '#a2c7ec'
+            }
+        ]
     },
 }
 ```
 
-| Attribute     | Type    | Description                                           |
-| ------------- | ------- | ----------------------------------------------------- |
-| useSwitchMode | Boolean | Whether to use this plugin                            |
-| top           | Integer | Top margin of the first icon, unit of measurement: px |
-| right         | Integer | Right margin of the icons, unit of measurement: px    |
-| svgColor      | String  | Color of the icons                                    |
+| Property        | Type      | Description                                                                           |
+| --------------- | --------- | ------------------------------------------------------------------------------------- |
+| `useSwitchMode` | `Boolean` | Whether to use this plugin                                                            |
+| `top`           | `Integer` | The downward offset of all icons relative to the vertical middle of the page, in `px` |
+| `topOffset`     | `Integer` | How far the page scrolls down before the back-to-top icon appears, in `px`            |
+| `themes`        | `Object`  | Themes to add.                                                                        |
+
+For the `themes` property, the details are as follows:
+
+| Property          | Description                                                                                                                                                                                                                                                                     |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`            | Theme name. It has no practical use and only serves as an identifier. However, the `calligraphy` and `typography` themes are exceptions. Their backgrounds contain grid / dot patterns, so the plugin applies special handling to render the icon shown when selecting a theme. |
+| `light`           | Theme URL used in light mode. A custom theme can also be used; in this case, the URL is a path relative to `index.html`.                                                                                                                                                        |
+| `dark`            | Theme URL used in dark mode. A custom theme can also be used; in this case, the URL is a path relative to `index.html`.                                                                                                                                                         |
+| `lightColor`      | Theme background color used in light mode, used to render the icon shown when selecting a theme.                                                                                                                                                                                |
+| `darkColor`       | Theme background color used in dark mode, used to render the icon shown when selecting a theme.                                                                                                                                                                                 |
+| `lightThemeColor` | Theme color used in light mode, used to render the icon shown when selecting a theme.                                                                                                                                                                                           |
+| `darkThemeColor`  | Theme color used in dark mode, used to render the icon shown when selecting a theme.                                                                                                                                                                                            |
 
 ## Others
 
-It's welcomed to make pr to this repo in order to improve this plugin.
+If you have improvements for this project, PRs are welcome.
 
-If you like this plugin, please give a star, thanks!
+If you like this plugin, you can give me a star. Thank you!
 
-For more tools I developed please refer to [my blog](https://pikapikapikaori.github.io/pikapikapi-blog/#/en-us/ITtech/).
+You can visit my homepage [here](http://www.pikapikapi.com/#/en-us/). Feel free to reach out.
