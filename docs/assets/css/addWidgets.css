@@ -182,6 +182,10 @@
     transform: translate(270px, 0);
 }
 
+.colorPickerPopupSpan input {
+    padding: 0;
+}
+
 /* 进度条 */
 .read-progress {
     --p: 0;
