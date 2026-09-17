@@ -24,3 +24,23 @@
     --mark-color: #f4ecd8;
     --sidebar-toggle-bg: hsla(39, 45%, 92%, .85);
 }
+
+.callout.caution {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.important {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.note {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.tip {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.warning {
+    --callout-bg: var(--color-bg);
+}

@@ -24,3 +24,23 @@
     --mark-color: #eff1f5;
     --sidebar-toggle-bg: rgba(239, 241, 245, .85);
 }
+
+.callout.caution {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.important {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.note {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.tip {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.warning {
+    --callout-bg: var(--color-bg);
+}

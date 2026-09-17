@@ -171,3 +171,8 @@ window.$docsify = {
 如果您喜欢本插件，可以给我点个 star，谢谢！
 
 我的主页可以访问[这里](http://www.pikapikapi.com)，欢迎交流。
+
+> [!CAUTION]
+> **注意**：由于 Docsify v5 新增了 css 变量来控制样式，因此上述设置对 Docsify v4 不完全有效。如需在 Docsify v4 使用本插件，需要做以下更改：
+> - 把 `//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/` 改为 `//cdn.jsdelivr.net/gh/pikapikapikaori/pikapikapikaori.github.io/docs/style/theme/`
+> - 把 `//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css` 改为 `//cdn.jsdelivr.net/gh/pikapikapikaori/pikapikapikaori.github.io/docs/style/base.css`

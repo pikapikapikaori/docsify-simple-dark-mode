@@ -16,6 +16,7 @@
     --codeblock-bg: #282828;
     --code-color: #e96900;
     --codeblock-color: #657b83;
+    --callout-bg: var(--color-bg);
     --table-row-alt-bg: #4d4c4c;
     --theme-color: #f66;
     --button-bg: var(--theme-color);
@@ -23,4 +24,24 @@
     --mark-bg: var(--theme-color);
     --mark-color: #3f3f3f;
     --sidebar-toggle-bg: rgba(63, 63, 63, .8);
+}
+
+.callout.caution {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.important {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.note {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.tip {
+    --callout-bg: var(--color-bg);
+}
+
+.callout.warning {
+    --callout-bg: var(--color-bg);
 }

@@ -171,3 +171,8 @@ If you have improvements for this project, PRs are welcome.
 If you like this plugin, you can give me a star. Thank you!
 
 You can visit my homepage [here](http://www.pikapikapi.com/#/en-us/). Feel free to reach out.
+
+> [!CAUTION]
+> **Note**: Since Docsify v5 introduced CSS variables for styling, the above settings do not fully work with Docsify v4. To use this plugin with Docsify v4, make the following changes:
+> - Change `//cdn.jsdelivr.net/gh/pikapikapikaori/docsify-simple-dark-mode@latest/dist/css/theme/` to `//cdn.jsdelivr.net/gh/pikapikapikaori/pikapikapikaori.github.io/docs/style/theme/`
+> - Change `//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css` to `//cdn.jsdelivr.net/gh/pikapikapikaori/pikapikapikaori.github.io/docs/style/base.css`
