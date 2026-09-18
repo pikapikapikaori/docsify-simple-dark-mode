@@ -22,7 +22,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "minify": "node ./src/script/minify.js ./src/assets ./dist"
+    "minify": "node ./src/script/minify.js ./src/assets ./dist",
+    "release": "npm version -m \"version: bump to v%s\""
   },
   "devDependencies": {
     "clean-css": "^5.3.3",
