@@ -22,7 +22,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "minify": "node ./src/minify.js ./docs/assets ./dist"
+    "minify": "node ./src/script/minify.js ./src/assets ./dist"
   },
   "devDependencies": {
     "clean-css": "^5.3.3",

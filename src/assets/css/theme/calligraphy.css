@@ -27,6 +27,10 @@
     --grid-color: rgba(120, 160, 200, .18);
 }
 
+html {
+    background: transparent
+}
+
 body {
     background-color: var(--color-bg);
     background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
@@ -37,6 +41,7 @@ body {
     background-color: var(--sidebar-bg);
     background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: var(--grid-size) var(--grid-size);
+    background-attachment: local; 
 }
 
 .callout.caution {

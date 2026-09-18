@@ -27,6 +27,10 @@
     --dot-size: 22px;
 }
 
+html {
+    background: transparent
+}
+
 body {
     background-color: var(--color-bg);
     background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1.5px);
@@ -37,6 +41,7 @@ body {
     background-color: var(--sidebar-bg);
     background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1.5px);
     background-size: var(--dot-size) var(--dot-size);
+    background-attachment: local; 
 }
 
 .callout.caution {
